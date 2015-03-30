@@ -1,0 +1,24 @@
+Black Jack Burn Down
+
+Black jack will run with 2 decks, and add 1 deck per person joining the game
+So dealer(server) and one player wil draw from 2 decks
+
+
+1. GUI
+
+2.Library
+	Cards
+	Shoe
+	Hand
+		Hit(draw -> calls shoe draw)
+		Stay
+		CalcScore
+	Player
+		Hand h
+		int money
+
+
+		
+	CallbackInfo
+
+3.Server
