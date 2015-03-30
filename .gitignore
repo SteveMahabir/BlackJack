@@ -214,3 +214,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+*.cache
+BlackJack/obj/Debug/BlackJack.csproj.FileListAbsolute.txt
+BlackJack/obj/Debug/BlackJack.csproj.FileListAbsolute.txt
