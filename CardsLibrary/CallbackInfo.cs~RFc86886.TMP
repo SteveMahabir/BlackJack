@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Runtime.Serialization; // Datat contract attributes
+
+namespace CardsLibrary
+{
+    [DataContract]
+    public class CallbackInfo
+    {
+        public int NumCards { get; private set; }
+        public int NumDecks { get; private set; }
+        public bool EmptyHand { get; private set; }
+
+        public CallbackInfo(int c, int d, bool e)
+        {
+            NumCards = c;
+            NumDecks = d;
+            EmptyHand = e;
+        }
+    }
+}

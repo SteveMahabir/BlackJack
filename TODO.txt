@@ -9,10 +9,13 @@ So dealer(server) and one player wil draw from 2 decks
 2.Library
 	Cards
 	Shoe
+	
 	Hand
+	(depricated[?] make a hand a list of cards, put the other methods in the player class )
 		Hit(draw -> calls shoe draw)
 		Stay
 		CalcScore
+	
 	Player
 		Hand h
 		int money

@@ -1,0 +1,78 @@
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\CardsClient.csprojResolveAssemblyReference.cache
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\MainWindow.baml
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\MainWindow.g.cs
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\App.g.cs
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\CardsClient_MarkupCompile.cache
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\CardsClient.g.resources
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\CardsClient.Properties.Resources.resources
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\CardsClient.csproj.GenerateResource.Cache
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\bin\Debug\CardsClient.exe.config
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\bin\Debug\CardsClient.exe
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\bin\Debug\CardsClient.pdb
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\bin\Debug\CardsLibrary.dll
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\bin\Debug\CardsLibrary.pdb
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\CardsClient.exe
+c:\users\athomas.essolutions\documents\visual studio 2012\Projects\CardsExample\CardsClient\obj\Debug\CardsClient.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\bin\Debug\CardsClient.exe.config
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\bin\Debug\CardsClient.exe
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\bin\Debug\CardsClient.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\CardsClient.csprojResolveAssemblyReference.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\MainWindow.baml
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\MainWindow.g.cs
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\App.g.cs
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\CardsClient_MarkupCompile.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\CardsClient.g.resources
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\CardsClient.Properties.Resources.resources
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\CardsClient.csproj.GenerateResource.Cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\CardsClient.exe
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\obj\Debug\CardsClient.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\bin\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.01\CardsExample_starting\CardsClient\bin\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\_old\W2014\Week.01\CardsExample\CardsClient\bin\Debug\CardsClient.exe.config
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\bin\Debug\CardsClient.exe.config
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\bin\Debug\CardsClient.exe
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\bin\Debug\CardsClient.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\CardsClient.csprojResolveAssemblyReference.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\MainWindow.baml
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\MainWindow.g.cs
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\App.g.cs
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\CardsClient_MarkupCompile.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\CardsClient.g.resources
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\CardsClient.Properties.Resources.resources
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\CardsClient.csproj.GenerateResource.Cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\CardsClient.exe
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\obj\Debug\CardsClient.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\bin\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsClient\bin\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.08\Basic Cards Application\CardsClient\bin\Debug\CardsClient.exe.config
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.08\Cards as a Basic WCF Service (Incomplete)\CardsClient\bin\Debug\CardsClient.exe.config
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\bin\Debug\CardsClient.exe.config
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\bin\Debug\CardsClient.exe
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\bin\Debug\CardsClient.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\bin\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\bin\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\CardsClient.csprojResolveAssemblyReference.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\MainWindow.baml
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\MainWindow.g.cs
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\App.g.cs
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\CardsClient_MarkupCompile.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\CardsClient.g.resources
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\CardsClient.Properties.Resources.resources
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\CardsClient.csproj.GenerateResource.Cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\CardsClient.exe
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsClient\obj\Debug\CardsClient.pdb
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\bin\Debug\CardsClient.exe.config
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\bin\Debug\CardsClient.exe
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\bin\Debug\CardsClient.pdb
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\bin\Debug\CardsLibrary.dll
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\bin\Debug\CardsLibrary.pdb
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.csprojResolveAssemblyReference.cache
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\MainWindow.baml
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\MainWindow.g.cs
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\App.g.cs
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient_MarkupCompile.cache
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.g.resources
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.Properties.Resources.resources
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.csproj.GenerateResource.Cache
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.exe
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.pdb

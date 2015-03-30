@@ -1,0 +1,20 @@
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsLibrary\bin\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsLibrary\bin\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsLibrary\obj\Debug\CardsLibrary.csprojResolveAssemblyReference.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsLibrary\obj\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.03\CardsLibrary\CardsLibrary\obj\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.08\Basic Cards Application\CardsLibrary\bin\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.08\Basic Cards Application\CardsLibrary\bin\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.08\Basic Cards Application\CardsLibrary\obj\Debug\CardsLibrary.csprojResolveAssemblyReference.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.08\Basic Cards Application\CardsLibrary\obj\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.08\Basic Cards Application\CardsLibrary\obj\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsLibrary\bin\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsLibrary\bin\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsLibrary\obj\Debug\CardsLibrary.csprojResolveAssemblyReference.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsLibrary\obj\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.10\Cards WCF with Card as a Data Transfer Object\CardsLibrary\obj\Debug\CardsLibrary.pdb
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsLibrary\bin\Debug\CardsLibrary.dll
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsLibrary\bin\Debug\CardsLibrary.pdb
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsLibrary\obj\Debug\CardsLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsLibrary\obj\Debug\CardsLibrary.dll
+C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsLibrary\obj\Debug\CardsLibrary.pdb
