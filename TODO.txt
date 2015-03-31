@@ -4,7 +4,7 @@ Black jack will run with 2 decks, and add 1 deck per person joining the game
 So dealer(server) and one player wil draw from 2 decks
 
 
-1. GUI
+1. GUI (NiX - In Prog)
 
 2.Library
 	Cards
@@ -16,10 +16,11 @@ So dealer(server) and one player wil draw from 2 decks
 		Stay
 		CalcScore
 	
-	Player
+	Player						
 		Hand h
 		int money
 
+		+int Calc Score (NiX - Done)
 
 		
 	CallbackInfo
