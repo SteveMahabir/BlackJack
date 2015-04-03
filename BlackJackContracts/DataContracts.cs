@@ -97,7 +97,7 @@ namespace BlackJackContracts
     }
 
     [DataContract]
-    class Player
+    public class Player
     {
         /* Data Members Passed Back to the Client */
         [DataMember]
