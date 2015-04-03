@@ -8,7 +8,15 @@ using System.ServiceModel;
 
 namespace BlackJackContracts
 {
+    // This is the Callback Contract that each client will implement
     [ServiceContract]
+    public interface ICallback
+    {
+        [OperationContract(IsOneWay = true)]
+        void UpdateGui(CallbackInfo info);
+    }
+
+    [ServiceContract(CallbackContract = typeof(ICallback))]
     public interface IGame
     {
         [OperationContract]
@@ -23,8 +31,5 @@ namespace BlackJackContracts
         [OperationContract]
         void StartGame();
 
-    }
-    class ServiceContracts
-    {
     }
 }

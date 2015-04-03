@@ -12,7 +12,6 @@ namespace CardsLibrary
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Game : IGame
     {
-
         private Dictionary<int, ICallback> clientCallbacks
             = new Dictionary<int, ICallback>();
         private int nextCallbackId = 1;
