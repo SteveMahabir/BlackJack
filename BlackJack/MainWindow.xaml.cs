@@ -14,15 +14,19 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using System.ServiceModel;  // WCF namespace
-
+using BlackJackContracts;
 
 namespace BlackJack
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant, UseSynchronizationContext = false)]
+    public partial class MainWindow : Window, ICallback
     {
+        private IGame game = null;
+        private int myCallbackId = -1;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,13 +35,13 @@ namespace BlackJack
             try
             {
                 // Configure the Endpoint details
-                //DuplexChannelFactory<IGame> channel = new DuplexChannelFactory<IGame>(this, "Game");
+                DuplexChannelFactory<IGame> channel = new DuplexChannelFactory<IGame>(this, "Game");
 
                 //// Activate a remote Shoe object
-                //shoe = channel.CreateChannel();
+                game = channel.CreateChannel();
 
                 //// Register for callbacks
-                //myCallbackId = shoe.RegisterForCallbacks();
+                //myCallbackId = game.RegisterForCallbacks();
 
                 //// Set-up the slider control
                 //sliderDecks.Minimum = 1;
@@ -45,7 +49,7 @@ namespace BlackJack
                 //sliderDecks.Value = shoe.NumDecks;
 
                 //updateCardCounts();
-
+                //MessageBox.Show(game.ToString());
             }
             catch (Exception ex)
             {
@@ -104,7 +108,7 @@ namespace BlackJack
 
         private void btn_Hit_Click(object sender, RoutedEventArgs e)
         {
-
+            game.Hit();
         }
 
         private void btn_Stay_Click(object sender, RoutedEventArgs e)
@@ -112,6 +116,23 @@ namespace BlackJack
 
         }
 
+
+        // Implement the callback contract
+        private delegate void ClientUpdateDelegate(CallbackInfo info);
+
+        public void UpdateGui(CallbackInfo info)
+        {
+            if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
+            {
+
+            }
+            else
+            {
+                // Only the main (dispatch) thread can change the GUI
+                this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(UpdateGui), info);
+            }
+
+        }
     }
 
 

@@ -92,7 +92,7 @@ namespace CardsLibrary
         {
             if (cardIdx == cards.Count)
                 throw new System.IndexOutOfRangeException("The Shoe is empty. Please reset.");
-
+            //TODO : Check cardIdx , If 0 then throw Empty Deck Excption
             Console.WriteLine("Dealing: " + cards[cardIdx].Name);
             Card card = cards[cardIdx++];
 
