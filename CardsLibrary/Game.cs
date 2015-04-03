@@ -153,11 +153,12 @@ namespace CardsLibrary
         }
 
         // Hit - Draws a Card from the Master Shoe Object
-        public Card Hit()
+        public void Hit(int id)
         {
             try
             {
-                return gameDeck.Draw();
+                players[id].hand.Add(gameDeck.Draw());
+                players[id].handScore = CalculateHandScore(players[id].hand);
             }
             catch(Exception ex)
             {

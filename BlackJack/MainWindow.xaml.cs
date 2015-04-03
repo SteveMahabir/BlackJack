@@ -26,6 +26,7 @@ namespace BlackJack
     {
         private IGame game = null;
         private int myCallbackId = -1;
+        private Player me = null;
 
         public MainWindow()
         {
@@ -43,7 +44,10 @@ namespace BlackJack
                 // Register for callbacks
                 myCallbackId = game.RegisterForCallbacks();
 
+                me = game.GetPlayerbyId(myCallbackId);
+
                 MessageBox.Show("Welcome Player: " + myCallbackId);
+
                 //// Set-up the slider control
                 //sliderDecks.Minimum = 1;
                 //sliderDecks.Maximum = 10;
@@ -109,7 +113,18 @@ namespace BlackJack
 
         private void btn_Hit_Click(object sender, RoutedEventArgs e)
         {
-            game.Hit();
+            game.Hit(myCallbackId);
+            me = game.GetPlayerbyId(myCallbackId);
+            lst_PlayerCards.Items.Clear();
+            foreach (Card c in me.hand)
+                lst_PlayerCards.Items.Add(c.Name);
+
+            lbl_PlayerScore.Content = me.handScore.ToString();
+            if (me.handScore > 21)
+            {
+                //btn_Hit.IsEnabled = false;
+                //btn_Stay.IsEnabled = false;
+            }
         }
 
         private void btn_Stay_Click(object sender, RoutedEventArgs e)

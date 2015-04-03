@@ -31,7 +31,7 @@ namespace BlackJackContracts
         void UnregisterForCallbacks(int id);
 
         [OperationContract]
-        Card Hit();
+        void Hit(int id);
 
         [OperationContract]
         void Stay();
