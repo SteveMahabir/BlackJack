@@ -13,21 +13,16 @@ namespace CardsLibrary
     interface IGame
     {
         [OperationContract]
-        public Card Hit();
+        Card Hit();
 
         [OperationContract]
-        public void Stay();
+        void Stay();
 
         [OperationContract]
-        public void Bet();
+        void Bet();
 
         [OperationContract]
-        public void StartGame();
-
-        private void Shuffle();
-
-        private void setNumDecks();
-
+        void StartGame();
 
     }
 
@@ -57,6 +52,10 @@ namespace CardsLibrary
 
 
         #region Public Methods - Client Methods : Main Logic
+        public void StartGame()
+        {
+
+        }
 
         // Hit - Draws a Card from the Master Shoe Object
         public Card Hit() 
@@ -64,20 +63,15 @@ namespace CardsLibrary
             return gameDeck.Draw();
         }
 
-        void Stay() 
+        public void Stay() 
         {
 
         }
 
-        void Bet()
+        public void Bet()
         {
 
         }
-
-
-        void Shuffle() {}
-
-        void setNumDecks() {}
 
         #endregion
 
@@ -87,10 +81,21 @@ namespace CardsLibrary
             return 0;
         }
 
+        void Shuffle()
+        {
+            gameDeck.Shuffle();
+        }
+
+        void setNumDecks(int _numDecks)
+        {
+            gameDeck.NumDecks = _numDecks;
+        }
+
 
         //
         
 
         #endregion
+
     }
 }

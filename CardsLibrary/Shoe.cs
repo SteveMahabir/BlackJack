@@ -37,8 +37,10 @@ namespace CardsLibrary
     {
         [OperationContract]
         Card Draw();
+
         [OperationContract(IsOneWay = true)]
         void Shuffle();
+
         int NumDecks
         {
             [OperationContract]
@@ -51,10 +53,11 @@ namespace CardsLibrary
             [OperationContract]
             get;
         }
+
         [OperationContract]
         int RegisterForCallbacks();
-        [OperationContract(IsOneWay = true)]
-        void UnregisteredForCallbacks(int id);
+        
+        
     }
 
     // This is the implementation of the service 
@@ -164,7 +167,7 @@ namespace CardsLibrary
         public void UnregisterForCallbacks(int id) {
             clientCallbacks.Remove(id);
         }
-
+        
         // --------------------- Helper methods ---------------------
 
         private void repopulate()
