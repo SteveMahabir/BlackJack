@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.ServiceModel;  // WCF namespace
 namespace BlackJack
 {
     /// <summary>
@@ -27,7 +28,7 @@ namespace BlackJack
 
 
 
-        public enum round { bet = 0, deal, play, dealer, win };
+        public enum round { work = 0, bet, deal, play, dealer, win };
         public void disableUIforRound( round r ) {
             switch (r)
             {
@@ -60,6 +61,26 @@ namespace BlackJack
                 default:
                     break;
             }
+        }
+
+        private void btn_Bet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_StarRound_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Hit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Stay_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
     }

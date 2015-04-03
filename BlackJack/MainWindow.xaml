@@ -95,13 +95,13 @@
                         Grid.Column="1"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Margin="5">Hit</Button>
+                        Margin="5" Click="btn_Hit_Click">Hit</Button>
                 <Button x:Name="btn_Stay"
                         Grid.Row="3"
                         Grid.Column="2"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
-                        Margin="5">Stay</Button>
+                        Margin="5" Click="btn_Stay_Click">Stay</Button>
                 <Slider x:Name="sldr_BetAmount"
                         Orientation="Vertical"
                         Grid.RowSpan="2"
@@ -121,12 +121,12 @@
                         Grid.Column="0"
                         Margin="5"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="bottom">Start Round</Button>
+                        VerticalAlignment="bottom" Click="btn_StarRound_Click">Start Round</Button>
                 <Button x:Name="btn_Bet"
                         Grid.Row="1"
                         Grid.Column="0"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Top">Bet</Button>
+                        VerticalAlignment="Bottom" Margin="35,0,35,47" Click="btn_Bet_Click">Bet</Button>
                 <Label Grid.Row="2"
                        Grid.Column="0"
                        HorizontalAlignment="Center"
