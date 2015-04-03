@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack", "BlackJack\BlackJack.csproj", "{57BAD4F1-0E7D-4086-A9A0-57B6E5E6C55D}"
 EndProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsLibrary", "CardsLibrary\CardsLibrary.csproj", "{D544320F-630B-4349-BF12-5C15BFED192E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJackServiceHost", "BlackJackServiceHost\BlackJackServiceHost.csproj", "{584BE918-AE9F-452E-933A-AA8E814B82A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{D544320F-630B-4349-BF12-5C15BFED192E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D544320F-630B-4349-BF12-5C15BFED192E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D544320F-630B-4349-BF12-5C15BFED192E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{584BE918-AE9F-452E-933A-AA8E814B82A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{584BE918-AE9F-452E-933A-AA8E814B82A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{584BE918-AE9F-452E-933A-AA8E814B82A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{584BE918-AE9F-452E-933A-AA8E814B82A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
