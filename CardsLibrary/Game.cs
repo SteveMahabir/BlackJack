@@ -50,7 +50,40 @@ namespace CardsLibrary
         #region Public Methods - Client Methods : Main Logic
         public void StartGame()
         {
-            
+            //make a new list of players from the people who have joined.
+            //// this way is someone registers in the middle of a game they are ignored untill the next round starts
+	
+
+            //// at this point everyone has bet, so we need to deal cards to all the registered playerd
+	
+            //for( int i = 0; i < players.length; ++i ){
+            //    //deal 2 card	
+            //} 
+            ////give dealer two cards
+	
+	
+            //for( 5 times ){
+            //    //wait?
+            //    foreach( player ){
+            //        //each player, check if they have stayed			
+            //    }
+            //    //if all players have stayed, break;
+            //}
+	
+            //dealer plays{
+            //    //dealer score logic
+            //}
+	
+            //int daler score = calculate dealer score
+	
+	
+            //foreach( player ){
+            //    //if score is bigger then the dealer, payout the bet amount
+		
+            //}
+		
+            //work round;
+            //make a new master deck with the number of registered players + 1
         }
 
         // Hit - Draws a Card from the Master Shoe Object
