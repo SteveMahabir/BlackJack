@@ -21,6 +21,9 @@ namespace BlackJackContracts
     {
 
         [OperationContract]
+        Player GetPlayerbyId(int id);
+
+        [OperationContract]
         int RegisterForCallbacks();
 
 

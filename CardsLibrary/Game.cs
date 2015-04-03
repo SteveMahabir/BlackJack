@@ -12,9 +12,11 @@ namespace CardsLibrary
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Game : IGame
     {
-        private Dictionary<int, ICallback> clientCallbacks
-            = new Dictionary<int, ICallback>();
+        private Dictionary<int, ICallback> clientCallbacks = new Dictionary<int, ICallback>();
         private int nextCallbackId = 1;
+
+        public Dictionary<int, Player> players = new Dictionary<int, Player>();
+
 
         //Public Data Members - Visible to Clients
         public enum round { work = 0, bet, deal, play, dealer, win };
@@ -34,11 +36,18 @@ namespace CardsLibrary
 
         #region Public Methods - Client Registration Methods : Main Logic
 
+        public Player GetPlayerbyId(int _id)
+        {
+            return players[_id];
+        }
+
         public int RegisterForCallbacks()
         {
             ICallback cb = OperationContext.Current.GetCallbackChannel<ICallback>();
 
             clientCallbacks.Add(nextCallbackId, cb);
+
+            players.Add(nextCallbackId, new Player());
 
             return nextCallbackId++;
         }
@@ -55,11 +64,11 @@ namespace CardsLibrary
         {
 
             //make a new list of players from the people who have joined.
-            //// this way is someone registers in the middle of a game they are ignored untill the next round starts
+            //this way is someone registers in the middle of a game they are ignored untill the next round starts
             Dictionary<int, ICallback> players = clientCallbacks;
             Player dealer = new Player();
 
-            //// at this point everyone has bet, so we need to deal cards to all the registered playerd
+            // at this point everyone has bet, so we need to deal cards to all the registered playerd
 
             //deal cards
             foreach (var p in players.Values)

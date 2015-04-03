@@ -40,9 +40,10 @@ namespace BlackJack
                 //// Activate a remote Shoe object
                 game = channel.CreateChannel();
 
-                //// Register for callbacks
-                //myCallbackId = game.RegisterForCallbacks();
+                // Register for callbacks
+                myCallbackId = game.RegisterForCallbacks();
 
+                MessageBox.Show("Welcome Player: " + myCallbackId);
                 //// Set-up the slider control
                 //sliderDecks.Minimum = 1;
                 //sliderDecks.Maximum = 10;
