@@ -32,49 +32,103 @@ namespace CardsLibrary
         #region Public Methods - Client Methods : Main Logic
         public void StartGame()
         {
+
             //make a new list of players from the people who have joined.
             //// this way is someone registers in the middle of a game they are ignored untill the next round starts
-	
+            Dictionary<int, ICallback> players = clientCallbacks;
+            Player dealer = new Player();
 
             //// at this point everyone has bet, so we need to deal cards to all the registered playerd
-	
-            //for( int i = 0; i < players.length; ++i ){
-            //    //deal 2 card	
-            //} 
+
+            //deal cards
+            foreach (var p in players.Values)
+            {
+                //p.hand.add(gameDeck.Draw());
+                //p.hand.add(gameDeck.Draw());
+            }
+
             ////give dealer two cards
-	
-	
-            //for( 5 times ){
-            //    //wait?
-            //    foreach( player ){
-            //        //each player, check if they have stayed			
-            //    }
-            //    //if all players have stayed, break;
-            //}
-	
-            //dealer plays{
-            //    //dealer score logic
-            //}
-	
+            dealer.hand.Add(gameDeck.Draw());
+            dealer.hand.Add(gameDeck.Draw());
+
+            bool allPlayersStay = true;
+            //wait 25 seconds
+            for (int i = 0; i < 5; i++)
+            {
+                //sleep for 5 seconds
+                System.Threading.Thread.Sleep(5000);
+                allPlayersStay = true;
+                foreach (var p in players.Values)
+                {
+                    //if (!p.stay)
+                    //{
+                    //    allPlayersStay = false;
+                    //break;
+                    //}
+                }
+                if (allPlayersStay)
+                {
+                    break;
+                }
+            }
+
+            //time up message?
+
+            //dealer plays
             //int daler score = calculate dealer score
-	
-	
+            int dealerScore = CalculateHandScore(dealer.hand);
+
+            //dealer hits on 16 stays on 17
+            while (dealerScore < 16)
+            {
+                dealer.hand.Add(gameDeck.Draw());
+                dealerScore = CalculateHandScore(dealer.hand);
+            }
+
             //foreach( player ){
             //    //if score is bigger then the dealer, payout the bet amount
-		
+
             //}
-		
+
+            foreach (var p in players.Values)
+            {
+                int playerScore = 0 /* CalculateHandScore( p.hand )*/;
+                //if not bust
+                if (!(playerScore > 21))
+                {
+                    if (playerScore > dealerScore)
+                    {
+                        //p.money += p.bet;
+                        //p.message = "You won " + p.bet + "$!";
+                    }
+                }
+                else
+                {
+                    //bust
+                    //p.message = "Bust!"
+                }
+            }
+
             //work round;
             //make a new master deck with the number of registered players + 1
+            //reset all players bet amount to 0;
+
+            gameDeck.NumDecks = clientCallbacks.Values.Count() + 1;
+
+            foreach (var p in clientCallbacks)
+            {
+                //p.bet = 0;
+            }
+
         }
 
         // Hit - Draws a Card from the Master Shoe Object
-        public Card Hit() 
+        public Card Hit()
         {
             return gameDeck.Draw();
         }
 
-        public void Stay() 
+        public void Stay()
         {
 
         }
@@ -104,7 +158,7 @@ namespace CardsLibrary
 
 
         //
-        
+
 
         #endregion
 

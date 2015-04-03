@@ -95,4 +95,37 @@ namespace BlackJackContracts
 
         }
     }
+
+    [DataContract]
+    class Player
+    {
+        /* Data Members Passed Back to the Client */
+        [DataMember]
+        public int money;
+
+        [DataMember]
+        public List<Card> hand;
+
+        [DataMember]
+        public int bet;
+
+        [DataMember]
+        public int handScore;
+
+        [DataMember]
+        public bool stay;
+
+        [DataMember]
+        public string message;
+
+        public Player()
+        {
+            money = 100;
+            hand = new List<Card>();
+            bet = 5;
+            handScore = 0;
+        }
+
+
+    }
 }
