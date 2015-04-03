@@ -19,6 +19,7 @@ namespace BlackJackContracts
     [ServiceContract(CallbackContract = typeof(ICallback))]
     public interface IGame
     {
+
         [OperationContract]
         int RegisterForCallbacks();
 

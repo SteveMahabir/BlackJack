@@ -22,47 +22,8 @@ using System.ServiceModel;  // WCF namespace
 
 namespace CardsLibrary
 {
-    // This is the Callback Contract that each client will implement
-    [ServiceContract]
-    public interface ICallback
-    {
-        [OperationContract(IsOneWay = true)]
-        void UpdateGui(CallbackInfo info);
-    }
 
-
-    // This is the Contract for the Shoe service endpoint
-    [ServiceContract(CallbackContract = typeof(ICallback))]
-    public interface IShoe
-    {
-        [OperationContract]
-        Card Draw();
-
-        [OperationContract(IsOneWay = true)]
-        void Shuffle();
-
-        int NumDecks
-        {
-            [OperationContract]
-            get;
-            [OperationContract(IsOneWay = true)]
-            set;
-        }
-        int NumCards
-        {
-            [OperationContract]
-            get;
-        }
-
-        [OperationContract]
-        int RegisterForCallbacks();
-        
-        
-    }
-
-    // This is the implementation of the service 
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
-    public class Shoe : IShoe
+    public class Shoe
     {
         // ---------------- Private member variables ----------------
 
@@ -83,11 +44,8 @@ namespace CardsLibrary
         }
 
         // --------------- Public methods / properties --------------
-
-        // A public method that returns the next Card object which is the object at index
-        // cardIdx, and also increments the cardIdx so that a different card will be returned
-        // the next time this method is called. If there are no more cards (cardIdx is > the 
-        // last index) it throws an exception.
+        
+        // Draws a new card from the deck!
         public Card Draw()
         {
             if (cardIdx == cards.Count)
@@ -101,8 +59,7 @@ namespace CardsLibrary
             return card;
         }
 
-        // A public method that will randomize the order of the cards in the shoe
-        // and will reset the cardIdx to zero.
+        //Shuffling
         public void Shuffle()
         {
             Console.WriteLine("Shuffling the Shoe");

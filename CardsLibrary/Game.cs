@@ -146,7 +146,14 @@ namespace CardsLibrary
         // Hit - Draws a Card from the Master Shoe Object
         public Card Hit()
         {
-            return gameDeck.Draw();
+            try
+            {
+                return gameDeck.Draw();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Stay()
