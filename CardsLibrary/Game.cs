@@ -12,6 +12,11 @@ namespace CardsLibrary
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Game : IGame
     {
+
+        private Dictionary<int, ICallback> clientCallbacks
+            = new Dictionary<int, ICallback>();
+        private int nextCallbackId = 1;
+
         //Public Data Members - Visible to Clients
         public enum round { work = 0, bet, deal, play, dealer, win };
 
@@ -28,6 +33,23 @@ namespace CardsLibrary
 
         }
 
+        #region Public Methods - Client Registration Methods : Main Logic
+
+        public int RegisterForCallbacks()
+        {
+            ICallback cb = OperationContext.Current.GetCallbackChannel<ICallback>();
+
+            clientCallbacks.Add(nextCallbackId, cb);
+
+            return nextCallbackId++;
+        }
+
+        public void UnregisterForCallbacks(int id)
+        {
+            clientCallbacks.Remove(id);
+        }
+
+        #endregion
 
         #region Public Methods - Client Methods : Main Logic
         public void StartGame()
@@ -141,9 +163,40 @@ namespace CardsLibrary
         #endregion
 
         #region Private Methods - Helper Methods Only Used by the Service
-        private int CalculateHandScore()
+        private int CalculateHandScore(List<Card> hand)
         {
-            return 0;
+            int ret_score = 0;
+            bool aceFound = false;
+            int aceCount = 0;
+
+            //get toal scre from cards in hand
+            foreach (Card c in hand)
+            {
+                if (c.Rank == Card.RankID.Ace)
+                {
+                    aceFound = true;
+                    aceCount++;
+                }
+
+                ret_score += c.score;
+            }
+
+            //adjust for aces
+            if (aceFound & ret_score > 21)
+            {
+                while (ret_score > 21)
+                {
+                    if (aceCount == 0)
+                    {
+                        break;
+                    }
+                    ret_score = -10;
+                    aceCount--;
+
+                }
+            }
+
+            return ret_score;
         }
 
         void Shuffle()
