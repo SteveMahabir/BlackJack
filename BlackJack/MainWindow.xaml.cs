@@ -28,11 +28,12 @@ namespace BlackJack
 
 
 
-        public enum round { work = 0, bet, deal, play, dealer, win };
+        public enum round { bet = 0, deal, play, dealer, work };
         public void disableUIforRound( round r ) {
             switch (r)
             {
                 case round.bet:
+                    btn_StarRound.IsEnabled = false;
                     btn_Bet.IsEnabled = true;
                     sldr_BetAmount.IsEnabled = true;
                     btn_Hit.IsEnabled = false;
@@ -52,7 +53,7 @@ namespace BlackJack
                     btn_Bet.IsEnabled = false;
                     sldr_BetAmount.IsEnabled = false;
                     break;
-                case round.win:
+                case round.work:
                     btn_Hit.IsEnabled = false;
                     btn_Stay.IsEnabled = false;
                     btn_Bet.IsEnabled = false;
@@ -65,7 +66,8 @@ namespace BlackJack
 
         private void btn_Bet_Click(object sender, RoutedEventArgs e)
         {
-
+            btn_StarRound.IsEnabled = true;
+            btn_Bet.IsEnabled = false;
         }
 
         private void btn_StarRound_Click(object sender, RoutedEventArgs e)
