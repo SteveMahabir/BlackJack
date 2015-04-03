@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.ServiceModel; // Needed for .Net
 using System.Runtime.Serialization;
+using BlackJackContracts;
 
 namespace CardsLibrary
 {

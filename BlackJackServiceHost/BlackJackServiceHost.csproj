@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BlackJackContracts\BlackJackContracts.csproj">
+      <Project>{ad3c0f06-053f-48ef-abb2-8374a10c371b}</Project>
+      <Name>BlackJackContracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CardsLibrary\CardsLibrary.csproj">
       <Project>{d544320f-630b-4349-bf12-5c15bfed192e}</Project>
       <Name>CardsLibrary</Name>

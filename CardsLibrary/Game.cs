@@ -3,33 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using System.ServiceModel;  // WCF namespace
+using System.ServiceModel;
+using BlackJackContracts;
 
 namespace CardsLibrary
 {
 
-    [ServiceContract]
-    public interface IGame
-    {
-        [OperationContract]
-        Card Hit();
-
-        [OperationContract]
-        void Stay();
-
-        [OperationContract]
-        void Bet();
-
-        [OperationContract]
-        void StartGame();
-
-    }
-
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Game : IGame
     {
-
         //Public Data Members - Visible to Clients
         public enum round { work = 0, bet, deal, play, dealer, win };
 

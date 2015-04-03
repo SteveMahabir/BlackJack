@@ -16,10 +16,8 @@ namespace BlackJackServiceHost
             try
             {
                 // Address
-                servHost = new ServiceHost(typeof(CardsLibrary.Game),
-                new Uri("net.tcp://localhost:10000/CardsLibrary/"));
-                // Service contract and binding
-                servHost.AddServiceEndpoint(typeof(CardsLibrary.IGame), new NetTcpBinding(), "Game");
+                servHost = new ServiceHost(typeof(CardsLibrary.Game));
+
                 // Manage the service’s life cycle
                 servHost.Open();
                 Console.WriteLine("Service Successfully Started!  [press any key to shutdown service]");

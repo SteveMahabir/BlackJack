@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using System.ServiceModel;  // WCF namespace
+
+
 namespace BlackJack
 {
     /// <summary>
@@ -24,6 +26,31 @@ namespace BlackJack
         public MainWindow()
         {
             InitializeComponent();
+
+
+            try
+            {
+                // Configure the Endpoint details
+                //DuplexChannelFactory<IGame> channel = new DuplexChannelFactory<IGame>(this, "Game");
+
+                //// Activate a remote Shoe object
+                //shoe = channel.CreateChannel();
+
+                //// Register for callbacks
+                //myCallbackId = shoe.RegisterForCallbacks();
+
+                //// Set-up the slider control
+                //sliderDecks.Minimum = 1;
+                //sliderDecks.Maximum = 10;
+                //sliderDecks.Value = shoe.NumDecks;
+
+                //updateCardCounts();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
