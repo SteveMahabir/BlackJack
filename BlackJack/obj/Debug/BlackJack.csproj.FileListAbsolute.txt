@@ -1,1 +1,14 @@
 C:\Users\Nickademus\School\!05 Jan - April\VSProjects\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\MainWindow.baml
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\MainWindow.g.cs
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\App.g.cs
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\BlackJack_MarkupCompile.cache
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\BlackJack.g.resources
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.Cache
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\BlackJack\obj\Debug\BlackJack.csprojResolveAssemblyReference.cache

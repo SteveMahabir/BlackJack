@@ -25,6 +25,15 @@ namespace CardsLibrary
         [DataMember]
         public int handScore;
 
+
+        Player()
+        {
+            money = 100;
+            hand = new List<Card>();
+            bet = 5;
+            handScore = 0;
+        }
+
         //TODO: Put this 
         public int calcScore(){
             int ret_score = 0;

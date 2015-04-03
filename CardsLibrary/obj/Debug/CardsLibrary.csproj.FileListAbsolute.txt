@@ -18,3 +18,8 @@ C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\C
 C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsLibrary\obj\Debug\CardsLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsLibrary\obj\Debug\CardsLibrary.dll
 C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsLibrary\obj\Debug\CardsLibrary.pdb
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\CardsLibrary\bin\Debug\CardsLibrary.dll
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\CardsLibrary\bin\Debug\CardsLibrary.pdb
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\CardsLibrary\obj\Debug\CardsLibrary.dll
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\CardsLibrary\obj\Debug\CardsLibrary.pdb
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\CardsLibrary\obj\Debug\CardsLibrary.csprojResolveAssemblyReference.cache
