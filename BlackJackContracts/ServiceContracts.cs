@@ -20,6 +20,13 @@ namespace BlackJackContracts
     public interface IGame
     {
         [OperationContract]
+        int RegisterForCallbacks();
+
+
+        [OperationContract(IsOneWay = true)]
+        void UnregisterForCallbacks(int id);
+
+        [OperationContract]
         Card Hit();
 
         [OperationContract]
