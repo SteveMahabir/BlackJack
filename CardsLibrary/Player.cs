@@ -4,13 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ServiceModel; // Needed for .Net
+using System.Runtime.Serialization;
+
 namespace CardsLibrary
 {
+    [DataContract]
     class Player
     {
-        int money;
-        List<Card> hand;
+        /* Data Members Passed Back to the Client */
+        [DataMember]
+        public int money;
 
+        [DataMember]
+        public List<Card> hand;
+
+        [DataMember]
+        public int bet;
+
+        [DataMember]
+        public int handScore;
+
+        //TODO: Put this 
         public int calcScore(){
             int ret_score = 0;
             bool aceFound = false;
