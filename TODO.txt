@@ -26,3 +26,10 @@ So dealer(server) and one player wil draw from 2 decks
 	CallbackInfo
 
 3.Server
+
+
+
+
+
+
+
