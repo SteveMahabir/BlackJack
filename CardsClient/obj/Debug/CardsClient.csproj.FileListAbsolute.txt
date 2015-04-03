@@ -76,3 +76,5 @@ C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\C
 C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.csproj.GenerateResource.Cache
 C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.exe
 C:\Users\Nickademus\School\!05 Jan - April\Net\Cards WCF with Client Callbacks\CardsClient\obj\Debug\CardsClient.pdb
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\CardsClient\bin\Debug\CardsClient.exe.config
+C:\Users\Steve\Documents\School\Term 5\INFO-5060 - Component Programming w.NET\Project 3\BlackJack\BlackJack\CardsClient\obj\Debug\CardsClient.exe

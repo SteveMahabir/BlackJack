@@ -1,19 +1,12 @@
-﻿/*
- * Program:         CardsServiceHost.exe
- * Module:          Program.cs
- * Author:          T. Haworth
- * Date:            March 9, 2015
- * Description:     Configures a WCF service host for the CardsLibrary.Shoe class.
- */
- 
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.ServiceModel;
 
-namespace CardsServiceHost
+namespace BlackJackServiceHost
 {
     class Program
     {
@@ -23,15 +16,17 @@ namespace CardsServiceHost
             try
             {
                 // Address
-                servHost = new ServiceHost(typeof(CardsLibrary.Shoe));
-
+                servHost = new ServiceHost(typeof(CardsLibrary.Game),
+                new Uri("net.tcp://localhost:10000/CardsLibrary/"));
+                // Service contract and binding
+                servHost.AddServiceEndpoint(typeof(CardsLibrary.IGame), new NetTcpBinding(), "Game");
                 // Manage the service’s life cycle
                 servHost.Open();
-                Console.WriteLine("Service started. Press a key to quit.");
+                Console.WriteLine("Service Successfully Started!  [press any key to shutdown service]");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("ERROR: " + ex.Message);
             }
             finally
             {

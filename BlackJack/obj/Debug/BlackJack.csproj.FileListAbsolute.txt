@@ -1,1 +1,2 @@
 C:\Users\Nickademus\School\!05 Jan - April\VSProjects\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Nickademus\School\!05 Jan - April\Net\BlackJack\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config

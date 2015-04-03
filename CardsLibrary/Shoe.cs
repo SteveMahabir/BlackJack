@@ -74,10 +74,10 @@ namespace CardsLibrary
 
         // ---------------------- Constructor -----------------------
 
-        public Shoe()
+        public Shoe(int _numDecks)
         {
             Console.WriteLine("Constructing a Shoe object");
-
+            this.numDecks = _numDecks;
             cardIdx = 0;
             repopulate();
         }

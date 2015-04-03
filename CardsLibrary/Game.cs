@@ -10,7 +10,7 @@ namespace CardsLibrary
 {
 
     [ServiceContract]
-    interface IGame
+    public interface IGame
     {
         [OperationContract]
         Card Hit();
@@ -27,7 +27,7 @@ namespace CardsLibrary
     }
 
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
-    class Game : IGame
+    public class Game : IGame
     {
 
         //Public Data Members - Visible to Clients
@@ -35,7 +35,6 @@ namespace CardsLibrary
 
 
         //Private Data Members - In-visible to Clients
-        private int NumDecks;
         private Shoe gameDeck;
 
         //Constructor
@@ -43,10 +42,7 @@ namespace CardsLibrary
         {
             Console.WriteLine("Starting a new game");
             // Create the Shoe Object used for the Game
-            gameDeck = new Shoe();
-
-            // Populate the Shoe Object
-            gameDeck.NumDecks = 2;
+            gameDeck = new Shoe(2);
 
         }
 
@@ -54,7 +50,7 @@ namespace CardsLibrary
         #region Public Methods - Client Methods : Main Logic
         public void StartGame()
         {
-
+            
         }
 
         // Hit - Draws a Card from the Master Shoe Object
