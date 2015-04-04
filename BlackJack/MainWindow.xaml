@@ -93,9 +93,7 @@
                 <Button x:Name="btn_Hit"
                         Grid.Row="3"
                         Grid.Column="1"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Bottom"
-                        Margin="5" Click="btn_Hit_Click">Hit</Button>
+                        Margin="66,42,5,5" Click="btn_Hit_Click">Hit</Button>
                 <Button x:Name="btn_Stay"
                         Grid.Row="3"
                         Grid.Column="2"
@@ -139,10 +137,10 @@
 
 
             </Grid>
-            
+
         </GroupBox>
 
-        
+
 
     </Grid>
 </Window>

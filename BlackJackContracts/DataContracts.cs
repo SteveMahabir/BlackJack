@@ -13,22 +13,12 @@ namespace BlackJackContracts
     public class Card
     {
         // ---------- Enums for the various suits and ranks ---------
-
-        public enum SuitID
-        {
-            Clubs, Diamonds, Hearts, Spades
-        };
-
-        public enum RankID
-        {
-            Ace, King, Queen, Jack, Ten, Nine, Eight, Seven, Six,
-            Five, Four, Three, Two
-        };
-
-
+        public enum SuitID { Clubs, Diamonds, Hearts, Spades };
+        public enum RankID { Ace, King, Queen, Jack, Ten, Nine, Eight, Seven, Six, Five, Four, Three, Two };
 
         // --------------- Public methods / properties --------------
 
+        #region Getters and Setters
         [DataMember]
         public SuitID Suit { get; private set; }
 
@@ -39,6 +29,8 @@ namespace BlackJackContracts
         public string Name { get; private set; }
 
         public int score { get; private set; }
+
+        #endregion
 
         // ---------------------- Constructor -----------------------
 
@@ -100,6 +92,7 @@ namespace BlackJackContracts
     public class Player
     {
         /* Data Members Passed Back to the Client */
+        #region Data Members
         [DataMember]
         public int money;
 
@@ -113,25 +106,40 @@ namespace BlackJackContracts
         public int handScore;
 
         [DataMember]
+        public bool isReady;
+
+        [DataMember]
         public bool stay;
 
         [DataMember]
         public string message;
 
+        #endregion
+
+        // Constructor
         public Player()
         {
             money = 100;
             hand = new List<Card>();
             bet = 5;
             handScore = 0;
+            isReady = false;
+            stay = false;
         }
-
 
     }
 
     [DataContract]
     public class CallbackInfo
     {
+        [DataMember]
+        public Dictionary<int, Player> Players { get; private set; }
+        
+        public CallbackInfo(Dictionary<int, Player> _players)
+        {
+            Players = _players;
+        }
+
         [DataMember]
         public int NumCards { get; private set; }
         [DataMember]

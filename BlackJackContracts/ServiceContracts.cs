@@ -20,27 +20,39 @@ namespace BlackJackContracts
     public interface IGame
     {
 
+        #region Player / Dealer Functions
+
         [OperationContract]
         Player GetPlayerbyId(int id);
 
         [OperationContract]
-        int RegisterForCallbacks();
+        Player GetDealer();
 
+        #endregion
+
+        #region CallBack Functions
+        [OperationContract]
+        int RegisterForCallbacks();
 
         [OperationContract(IsOneWay = true)]
         void UnregisterForCallbacks(int id);
+
+        #endregion
+
+        #region Main Game Logic
 
         [OperationContract]
         void Hit(int id);
 
         [OperationContract]
-        void Stay();
+        void Stay(int id);
 
         [OperationContract]
         void Bet();
 
         [OperationContract]
-        void StartGame();
+        void StartGame(int id);
 
+        #endregion
     }
 }

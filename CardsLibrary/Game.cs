@@ -12,18 +12,22 @@ namespace CardsLibrary
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Game : IGame
     {
+        #region Data Members
+
+        // Callback Data Members
         private Dictionary<int, ICallback> clientCallbacks = new Dictionary<int, ICallback>();
         private int nextCallbackId = 1;
 
+        // Dictionary Holding all Players
         public Dictionary<int, Player> players = new Dictionary<int, Player>();
-
 
         //Public Data Members - Visible to Clients
         public enum round { work = 0, bet, deal, play, dealer, win };
 
-
         //Private Data Members - In-visible to Clients
         private Shoe gameDeck;
+
+        #endregion
 
         //Constructor
         private Game()
@@ -32,125 +36,40 @@ namespace CardsLibrary
             // Create the Shoe Object used for the Game
             gameDeck = new Shoe(2);
 
+            // Create a Dealer
+            players.Add(0, new Player());
+            players[0].isReady = true;
         }
 
-        #region Public Methods - Client Registration Methods : Main Logic
-
-        public Player GetPlayerbyId(int _id)
-        {
-            return players[_id];
-        }
-
-        public int RegisterForCallbacks()
-        {
-            ICallback cb = OperationContext.Current.GetCallbackChannel<ICallback>();
-
-            clientCallbacks.Add(nextCallbackId, cb);
-
-            players.Add(nextCallbackId, new Player());
-
-            return nextCallbackId++;
-        }
-
-        public void UnregisterForCallbacks(int id)
-        {
-            clientCallbacks.Remove(id);
-        }
-
-        #endregion
 
         #region Public Methods - Client Methods : Main Logic
-        public void StartGame()
+        public void StartGame(int playerId)
         {
-
-            //make a new list of players from the people who have joined.
-            //this way is someone registers in the middle of a game they are ignored untill the next round starts
-            Dictionary<int, ICallback> players = clientCallbacks;
-            Player dealer = new Player();
-
-            // at this point everyone has bet, so we need to deal cards to all the registered playerd
-
-            //deal cards
-            foreach (var p in players.Values)
-            {
-                //p.hand.add(gameDeck.Draw());
-                //p.hand.add(gameDeck.Draw());
-            }
-
-            ////give dealer two cards
-            dealer.hand.Add(gameDeck.Draw());
-            dealer.hand.Add(gameDeck.Draw());
-
-            bool allPlayersStay = true;
-            //wait 25 seconds
-            for (int i = 0; i < 5; i++)
-            {
-                //sleep for 5 seconds
-                System.Threading.Thread.Sleep(5000);
-                allPlayersStay = true;
-                foreach (var p in players.Values)
-                {
-                    //if (!p.stay)
-                    //{
-                    //    allPlayersStay = false;
-                    //break;
-                    //}
-                }
-                if (allPlayersStay)
-                {
-                    break;
-                }
-            }
-
-            //time up message?
-
-            //dealer plays
-            //int daler score = calculate dealer score
-            int dealerScore = CalculateHandScore(dealer.hand);
-
-            //dealer hits on 16 stays on 17
-            while (dealerScore < 16)
-            {
-                dealer.hand.Add(gameDeck.Draw());
-                dealerScore = CalculateHandScore(dealer.hand);
-            }
-
-            //foreach( player ){
-            //    //if score is bigger then the dealer, payout the bet amount
-
-            //}
-
-            foreach (var p in players.Values)
-            {
-                int playerScore = 0 /* CalculateHandScore( p.hand )*/;
-                //if not bust
-                if (!(playerScore > 21))
-                {
-                    if (playerScore > dealerScore)
-                    {
-                        //p.money += p.bet;
-                        //p.message = "You won " + p.bet + "$!";
-                    }
-                }
+            // Player is Ready!
+            players[playerId].isReady = true;
+            
+            bool allPlayersReady = false;
+            foreach (Player p in players.Values)
+                if (p.isReady == true)
+                    allPlayersReady = true;
                 else
-                {
-                    //bust
-                    //p.message = "Bust!"
-                }
-            }
+                    allPlayersReady = false;
 
-            //work round;
-            //make a new master deck with the number of registered players + 1
-            //reset all players bet amount to 0;
-
-            gameDeck.NumDecks = clientCallbacks.Values.Count() + 1;
-
-            foreach (var p in clientCallbacks)
-            {
-                //p.bet = 0;
-            }
-
+            if (allPlayersReady)
+                BeginRound();   
         }
+
+        // All Players Ready!
+        private void BeginRound()
+        {
+            // Deal two Cards to Everyone
+            foreach (var p in players.Values)
+            {
+                p.hand.Add(gameDeck.Draw());
+                p.hand.Add(gameDeck.Draw());
+            }
+        }
+
 
         // Hit - Draws a Card from the Master Shoe Object
         public void Hit(int id)
@@ -159,6 +78,8 @@ namespace CardsLibrary
             {
                 players[id].hand.Add(gameDeck.Draw());
                 players[id].handScore = CalculateHandScore(players[id].hand);
+                if (players[id].handScore > 21)
+                    players[id].stay = true;
             }
             catch(Exception ex)
             {
@@ -166,9 +87,45 @@ namespace CardsLibrary
             }
         }
 
-        public void Stay()
+        // Stay - Holds the Card
+        public void Stay(int id)
         {
+            players[id].stay = true;
 
+            bool allPlayersStay = false;
+            foreach(Player p in players.Values)
+            {
+                if (p.stay)
+                    allPlayersStay = true;
+                else
+                    allPlayersStay = false;
+            }
+
+            if (allPlayersStay)
+                FinishRound();
+
+        }
+
+        public void FinishRound()
+        {
+            // Dealer Plays
+            while (players[0].handScore < 16)
+            {
+                players[0].hand.Add(gameDeck.Draw());
+                players[0].handScore = CalculateHandScore(players[0].hand);
+            }
+
+            foreach (Player p in players.Values)
+            {
+                if (p.handScore > players[0].handScore)
+                {
+                    p.message = "You Won!";
+                }
+                else
+                    p.message = "Sorry, Dealer Wins";
+            }
+
+            updateAllClients();
         }
 
         public void Bet()
@@ -176,9 +133,24 @@ namespace CardsLibrary
 
         }
 
+        // Returns a specific player
+        public Player GetPlayerbyId(int _id)
+        {
+            return players[_id];
+        }
+
+        // Returns the Dealers Info
+        public Player GetDealer()
+        {
+            return players[0];
+        }
+
+
         #endregion
 
         #region Private Methods - Helper Methods Only Used by the Service
+
+        // Used to obtain a score based on a players hand
         private int CalculateHandScore(List<Card> hand)
         {
             int ret_score = 0;
@@ -215,19 +187,45 @@ namespace CardsLibrary
             return ret_score;
         }
 
+        // Shuffle the Deck
         void Shuffle()
         {
             gameDeck.Shuffle();
         }
 
+        // Sets the Number of Decks
         void setNumDecks(int _numDecks)
         {
             gameDeck.NumDecks = _numDecks;
         }
 
+        // Register a Player for the game
+        public int RegisterForCallbacks()
+        {
+            ICallback cb = OperationContext.Current.GetCallbackChannel<ICallback>();
 
-        //
+            clientCallbacks.Add(nextCallbackId, cb);
 
+            players.Add(nextCallbackId, new Player());
+
+            return nextCallbackId++;
+        }
+
+        // Unregister a Player
+        public void UnregisterForCallbacks(int id)
+        {
+            clientCallbacks.Remove(id);
+        }
+
+        private void updateAllClients()
+        {
+            // Create and initialize the data transfer object
+            CallbackInfo info = new CallbackInfo(players);
+
+            // Update all clients via the callback contract
+            foreach (ICallback cb in clientCallbacks.Values)
+                cb.UpdateGui(info);
+        }
 
         #endregion
 
