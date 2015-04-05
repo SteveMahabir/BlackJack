@@ -48,7 +48,7 @@ namespace BlackJackContracts
         void Stay(int id);
 
         [OperationContract]
-        void Bet();
+        void Bet(int id, int betAmount);
 
         [OperationContract]
         void StartGame(int id);

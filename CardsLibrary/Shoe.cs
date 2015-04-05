@@ -37,7 +37,6 @@ namespace CardsLibrary
 
         public Shoe(int _numDecks)
         {
-            Console.WriteLine("Constructing a Shoe object");
             this.numDecks = _numDecks;
             cardIdx = 0;
             repopulate();
@@ -54,16 +53,12 @@ namespace CardsLibrary
             Console.WriteLine("Dealing: " + cards[cardIdx].Name);
             Card card = cards[cardIdx++];
 
-            UpdateAllClients(false);
-
             return card;
         }
 
         //Shuffling
         public void Shuffle()
         {
-            Console.WriteLine("Shuffling the Shoe");
-
             Random rand = new Random();
             Card temp;
 
@@ -83,8 +78,6 @@ namespace CardsLibrary
 
             // Reset the cardIdx
             cardIdx = 0;
-
-            UpdateAllClients(true);
         }
 
         // A public property that allows the client to read the number of decks in 
@@ -129,8 +122,6 @@ namespace CardsLibrary
 
         private void repopulate()
         {
-            Console.WriteLine("Repopulating the Shoe with {0} deck(s)", numDecks);
-
             // Remove "old" cards
             cards.Clear();
 
@@ -149,20 +140,6 @@ namespace CardsLibrary
 
             // Cards are in a logical sequence, so randomize the collection
             Shuffle();
-        }
-
-        //arg is to tell the client if they need to empty the hand with this call
-        private void UpdateAllClients(bool emptyHand)
-        {
-            //create data transpher pobject
-            CallbackInfo info = new CallbackInfo(cards.Count - cardIdx, numDecks, emptyHand);
-
-            //update all clients cia the callback contract
-
-            foreach (KeyValuePair<int, ICallback> cb in clientCallbacks)
-            {
-                cb.Value.UpdateGui(info);
-            }
         }
 
     }

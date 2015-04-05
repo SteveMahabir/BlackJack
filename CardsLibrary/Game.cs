@@ -47,7 +47,9 @@ namespace CardsLibrary
         {
             // Player is Ready!
             players[playerId].isReady = true;
-            
+
+            updateAllClients(false);
+
             bool allPlayersReady = false;
             foreach (Player p in players.Values)
                 if (p.isReady == true)
@@ -56,7 +58,7 @@ namespace CardsLibrary
                     allPlayersReady = false;
 
             if (allPlayersReady)
-                BeginRound();   
+                BeginRound();
         }
 
         // All Players Ready!
@@ -68,6 +70,9 @@ namespace CardsLibrary
                 p.hand.Add(gameDeck.Draw());
                 p.hand.Add(gameDeck.Draw());
             }
+
+            // Update Clients
+            updateAllClients(false);
         }
 
 
@@ -125,12 +130,12 @@ namespace CardsLibrary
                     p.message = "Sorry, Dealer Wins";
             }
 
-            updateAllClients();
+            updateAllClients(true);
         }
 
-        public void Bet()
+        public void Bet(int id, int betAmount)
         {
-
+            players[0].bet = betAmount;
         }
 
         // Returns a specific player
@@ -178,7 +183,7 @@ namespace CardsLibrary
                     {
                         break;
                     }
-                    ret_score = -10;
+                    ret_score -= 10;
                     aceCount--;
 
                 }
@@ -217,10 +222,10 @@ namespace CardsLibrary
             clientCallbacks.Remove(id);
         }
 
-        private void updateAllClients()
+        private void updateAllClients(bool finished)
         {
             // Create and initialize the data transfer object
-            CallbackInfo info = new CallbackInfo(players);
+            CallbackInfo info = new CallbackInfo(players, finished);
 
             // Update all clients via the callback contract
             foreach (ICallback cb in clientCallbacks.Values)

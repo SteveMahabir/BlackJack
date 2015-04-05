@@ -61,50 +61,15 @@ namespace BlackJack
 
 
 
-        public enum round { bet = 0, deal, play, dealer, work };
-        public void disableUIforRound( round r ) {
-            switch (r)
-            {
-                case round.bet:
-                    btn_StarRound.IsEnabled = false;
-                    btn_Bet.IsEnabled = true;
-                    sldr_BetAmount.IsEnabled = true;
-                    btn_Hit.IsEnabled = false;
-                    btn_Stay.IsEnabled = false;
-                    break;
-                case round.deal:
-                    btn_Bet.IsEnabled = false;
-                    sldr_BetAmount.IsEnabled = false;
-                    break;
-                case round.play:
-                     btn_Hit.IsEnabled = true;
-                     btn_Stay.IsEnabled = true;
-                    break;
-                case round.dealer:
-                    btn_Hit.IsEnabled = false;
-                    btn_Stay.IsEnabled = false;
-                    btn_Bet.IsEnabled = false;
-                    sldr_BetAmount.IsEnabled = false;
-                    break;
-                case round.work:
-                    btn_Hit.IsEnabled = false;
-                    btn_Stay.IsEnabled = false;
-                    btn_Bet.IsEnabled = false;
-                    sldr_BetAmount.IsEnabled = false;
-                    break;
-                default:
-                    break;
-            }
-        }
-
         private void btn_Bet_Click(object sender, RoutedEventArgs e)
         {
             // Toggle UI Controls
             btn_StarRound.IsEnabled = true;
             btn_Bet.IsEnabled = false;
+            game.Bet(myCallbackId, Convert.ToInt32(lbl_PlayerScore.Content));
         }
 
-        private void btn_StarRound_Click(object sender, RoutedEventArgs e)
+        private void btn_StartRound_Click(object sender, RoutedEventArgs e)
         {
             // Toggle UI Controls
             btn_Bet.IsEnabled = false;
@@ -143,7 +108,7 @@ namespace BlackJack
             btn_Hit.IsEnabled = false;
             MessageBox.Show("Waiting for other players to finish","CURRENT SCORE: " +me.handScore.ToString(), MessageBoxButton.OK, MessageBoxImage.Exclamation);
             game.Stay(myCallbackId);
-            UpdateDealer();
+            UpdateDealer(false);
             
         }
 
@@ -158,12 +123,20 @@ namespace BlackJack
             // Update the UI
             lbl_PlayerScore.Content = me.handScore.ToString();
         }
-        public void UpdateDealer()
+        public void UpdateDealer(bool hidden)
         {
             dealer = game.GetDealer();
             lst_DealerCards.Items.Clear();
-            foreach(Card c in dealer.hand)
-                lst_DealerCards.Items.Add(c.Name);
+
+            if(hidden)
+            {
+                lst_DealerCards.Items.Add("[Hidden]");
+                lst_DealerCards.Items.Add(dealer.hand[1].Name);
+                lbl_DealerScore.Content = "Unknown";
+            }
+            else
+                foreach (Card c in dealer.hand)
+                    lst_DealerCards.Items.Add(c.Name);
         }
 
         // Implement the callback contract
@@ -173,13 +146,12 @@ namespace BlackJack
         {
             if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
             {
-                
                 me = info.Players[myCallbackId];
                 UpdateMe();
-                UpdateDealer();
+                UpdateDealer(true);
 
-                MessageBox.Show(me.message);
-                this.Close();
+                if (info.gameFinished)
+                    FinishRound();
             }
             else
             {
@@ -187,6 +159,13 @@ namespace BlackJack
                 this.Dispatcher.BeginInvoke(new ClientUpdateDelegate(UpdateGui), info);
             }
 
+        }
+
+        //TODO  make a void method to END GAME
+        public void FinishRound()
+        {
+            lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_PlayerScore.Content) + me.bet).ToString();
+            
         }
     }
 
