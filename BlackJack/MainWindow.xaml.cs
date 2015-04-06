@@ -59,14 +59,18 @@ namespace BlackJack
             }
         }
 
-
-
         private void btn_Bet_Click(object sender, RoutedEventArgs e)
         {
-            // Toggle UI Controls
-            btn_StarRound.IsEnabled = true;
-            btn_Bet.IsEnabled = false;
-            game.Bet(myCallbackId, Convert.ToInt32(lbl_PlayerScore.Content));
+            if (Convert.ToInt32(lbl_BetAmount.Content) > Convert.ToInt32(lbl_MoneyAmount.Content))
+                MessageBox.Show("Low on Funds", "Nice Try...", MessageBoxButton.OK, MessageBoxImage.Stop);
+            else
+            { 
+                // Toggle UI Controls
+                btn_StarRound.IsEnabled = true;
+                btn_Bet.IsEnabled = false;
+                sldr_BetAmount.IsEnabled = false;
+                game.Bet(myCallbackId, Convert.ToInt32(lbl_PlayerScore.Content));
+            }
         }
 
         private void btn_StartRound_Click(object sender, RoutedEventArgs e)
@@ -79,9 +83,6 @@ namespace BlackJack
 
             // Call the Game Start
             game.StartGame(myCallbackId);
-
-            // User Prompt
-            MessageBox.Show("Game started, waiting for other players to join...", "Waiting...", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void btn_Hit_Click(object sender, RoutedEventArgs e)
@@ -95,9 +96,10 @@ namespace BlackJack
             // Handle the Score Logic
             if (me.handScore > 21)
             {
-                MessageBox.Show("Bust!", "Sorry!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Bust! Sorry you have lost this round", "Dealer Wins!", MessageBoxButton.OK, MessageBoxImage.Error);
                 btn_Hit.IsEnabled = false;
                 btn_Stay.IsEnabled = false;
+                btn_Stay_Click(sender, e);
             }
         }
 
@@ -106,10 +108,7 @@ namespace BlackJack
         {
             btn_Stay.IsEnabled = false;
             btn_Hit.IsEnabled = false;
-            MessageBox.Show("Waiting for other players to finish","CURRENT SCORE: " +me.handScore.ToString(), MessageBoxButton.OK, MessageBoxImage.Exclamation);
             game.Stay(myCallbackId);
-            UpdateDealer(false);
-            
         }
 
         public void UpdateMe()
@@ -135,8 +134,11 @@ namespace BlackJack
                 lbl_DealerScore.Content = "Unknown";
             }
             else
+            { 
                 foreach (Card c in dealer.hand)
                     lst_DealerCards.Items.Add(c.Name);
+                lbl_DealerScore.Content = dealer.handScore.ToString();
+            }
         }
 
         // Implement the callback contract
@@ -146,12 +148,22 @@ namespace BlackJack
         {
             if (System.Threading.Thread.CurrentThread == this.Dispatcher.Thread)
             {
-                me = info.Players[myCallbackId];
-                UpdateMe();
-                UpdateDealer(true);
+                if (info.generalMessage)
+                {
+                    // Game has started, lets begin the round!
+                    MessageBox.Show("All Players are now ready!");
+                    UpdateMe();
+                    UpdateDealer(true);
+                }
+                else
+                { 
+                    me = info.Players[myCallbackId];
+                    UpdateMe();
+                    UpdateDealer(true);
 
-                if (info.gameFinished)
-                    FinishRound();
+                    if (info.gameFinished)
+                        FinishRound();
+                }
             }
             else
             {
@@ -161,11 +173,54 @@ namespace BlackJack
 
         }
 
-        //TODO  make a void method to END GAME
+        // This Round has Finished
         public void FinishRound()
         {
-            lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_PlayerScore.Content) + me.bet).ToString();
+            // Show the Dealer Cards and Score
+            UpdateDealer(false);
+
+            // Player Outcome Logic
             
+            if (dealer.handScore > 21 && me.handScore > 21) // Both Lost
+            {
+                MessageBox.Show("Both you and the dealer busts... No one wins", "Tie!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+            else if (dealer.handScore > 21) // Dealer Busts
+            {
+                MessageBox.Show("Congratulations, You Won!", "Winner!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) + me.bet).ToString();
+            }
+            else if (me.handScore > 21)
+            {
+                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) - me.bet).ToString();
+            }
+            else if (dealer.handScore < me.handScore) // Both are under 22
+            {
+                MessageBox.Show("Congratulations, You Won!", "Winner!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) + me.bet).ToString();
+            }
+            else
+            { 
+                MessageBox.Show("Sorry, Dealer Wins...", "Lost!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) - me.bet).ToString();
+            }
+
+            // Clear Dealer and Player
+            lst_DealerCards.Items.Clear();
+            lst_PlayerCards.Items.Clear();
+            lbl_DealerScore.Content = "0";
+            lbl_PlayerScore.Content = "0";
+
+            // Enable bets
+            btn_Bet.IsEnabled = true;
+            sldr_BetAmount.IsEnabled = true;
+
+            // Disable Plays
+            btn_Hit.IsEnabled = false;
+            btn_Stay.IsEnabled = false;
+            btn_StarRound.IsEnabled = false;
+
+            game.ClearMe(myCallbackId);
         }
     }
 

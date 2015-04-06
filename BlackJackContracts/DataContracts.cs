@@ -139,10 +139,16 @@ namespace BlackJackContracts
         [DataMember]
         public bool gameFinished { get; private set; }
 
-        public CallbackInfo(Dictionary<int, Player> _players, bool _finished)
+
+        [DataMember]
+        public bool generalMessage { get; private set; }
+
+
+        public CallbackInfo(Dictionary<int, Player> _players, bool _finished, bool _generalMessage)
         {
             Players = _players;
             gameFinished = _finished;
+            generalMessage = _generalMessage;
         }
 
     }

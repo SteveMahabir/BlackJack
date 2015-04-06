@@ -20,7 +20,7 @@ namespace BlackJackServiceHost
 
                 // Manage the service’s life cycle
                 servHost.Open();
-                Console.WriteLine("Service Successfully Started!  [press any key to shutdown service]");
+                Console.WriteLine("Players Found! \nService \\ Client Successfully Running!  [press any key to shutdown service]");
             }
             catch (Exception ex)
             {

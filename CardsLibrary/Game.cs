@@ -27,12 +27,15 @@ namespace CardsLibrary
         //Private Data Members - In-visible to Clients
         private Shoe gameDeck;
 
+        // Global Flags
+        private bool roundStarted = false;
+        
         #endregion
 
         //Constructor
         private Game()
         {
-            Console.WriteLine("Starting a new game");
+            Console.WriteLine("Game Started, waiting for players...");
             // Create the Shoe Object used for the Game
             gameDeck = new Shoe(2);
 
@@ -47,8 +50,6 @@ namespace CardsLibrary
         {
             // Player is Ready!
             players[playerId].isReady = true;
-
-            updateAllClients(false);
 
             bool allPlayersReady = false;
             foreach (Player p in players.Values)
@@ -73,7 +74,9 @@ namespace CardsLibrary
             }
 
             // Update Clients
-            updateAllClients(false);
+            updateAllClients(false, true);
+
+            roundStarted = true;
         }
 
 
@@ -82,7 +85,8 @@ namespace CardsLibrary
         {
             try
             {
-                players[id].hand.Add(gameDeck.Draw());
+                Card temp = gameDeck.Draw();
+                players[id].hand.Add(temp);
                 players[id].handScore = CalculateHandScore(players[id].hand);
                 if (players[id].handScore > 21)
                     players[id].stay = true;
@@ -131,7 +135,9 @@ namespace CardsLibrary
                     p.message = "Sorry, Dealer Wins";
             }
 
-            updateAllClients(true);
+            updateAllClients(true, false);
+
+            roundStarted = false;
         }
 
         public void ClearMe(int id)
@@ -141,7 +147,7 @@ namespace CardsLibrary
 
         public void Bet(int id, int betAmount)
         {
-            players[0].bet = betAmount;
+            players[id].bet = betAmount;
         }
 
         // Returns a specific player
@@ -228,10 +234,10 @@ namespace CardsLibrary
             clientCallbacks.Remove(id);
         }
 
-        private void updateAllClients(bool finished)
+        private void updateAllClients(bool finished, bool generalMessage)
         {
             // Create and initialize the data transfer object
-            CallbackInfo info = new CallbackInfo(players, finished);
+            CallbackInfo info = new CallbackInfo(players, finished, generalMessage);
 
             // Update all clients via the callback contract
             foreach (ICallback cb in clientCallbacks.Values)

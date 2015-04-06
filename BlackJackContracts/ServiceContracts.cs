@@ -53,6 +53,9 @@ namespace BlackJackContracts
         [OperationContract]
         void StartGame(int id);
 
+        [OperationContract]
+        void ClearMe(int myCallbackId);
+
         #endregion
     }
 }
