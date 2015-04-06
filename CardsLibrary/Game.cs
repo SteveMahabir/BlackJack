@@ -69,6 +69,7 @@ namespace CardsLibrary
             {
                 p.hand.Add(gameDeck.Draw());
                 p.hand.Add(gameDeck.Draw());
+                p.handScore = CalculateHandScore(p.hand);
             }
 
             // Update Clients
@@ -131,6 +132,11 @@ namespace CardsLibrary
             }
 
             updateAllClients(true);
+        }
+
+        public void ClearMe(int id)
+        {
+            players[id] = new Player();
         }
 
         public void Bet(int id, int betAmount)
