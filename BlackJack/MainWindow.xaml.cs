@@ -188,21 +188,21 @@ namespace BlackJack
             else if (dealer.handScore > 21) // Dealer Busts
             {
                 MessageBox.Show("Congratulations, You Won!", "Winner!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) + me.bet).ToString();
+                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) + Convert.ToInt32(lbl_BetAmount.Content)).ToString();
             }
             else if (me.handScore > 21)
             {
-                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) - me.bet).ToString();
+                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) - Convert.ToInt32(lbl_BetAmount.Content)).ToString();
             }
             else if (dealer.handScore < me.handScore) // Both are under 22
             {
                 MessageBox.Show("Congratulations, You Won!", "Winner!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) + me.bet).ToString();
+                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) + Convert.ToInt32(lbl_BetAmount.Content)).ToString();
             }
             else
             { 
                 MessageBox.Show("Sorry, Dealer Wins...", "Lost!", MessageBoxButton.OK, MessageBoxImage.Warning);
-                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) - me.bet).ToString();
+                lbl_MoneyAmount.Content = (Convert.ToInt32(lbl_MoneyAmount.Content) - Convert.ToInt32(lbl_BetAmount.Content)).ToString();
             }
 
             // Clear Dealer and Player

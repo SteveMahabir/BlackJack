@@ -44,7 +44,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Margin="5">
-                    21
+                    --
                 </Label>
 
             </Grid>
@@ -88,18 +88,18 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Margin="5">
-                    21
+                    --
                 </Label>
                 <Button x:Name="btn_Hit"
                         Grid.Row="3"
                         Grid.Column="1"
-                        Margin="66,42,5,5" Click="btn_Hit_Click">Hit</Button>
+                        Margin="45,42,5,5" Click="btn_Hit_Click">Hit</Button>
                 <Button x:Name="btn_Stay"
                         Grid.Row="3"
                         Grid.Column="2"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
-                        Margin="5" Click="btn_Stay_Click">Stay</Button>
+                        Margin="5,0,0,5" Click="btn_Stay_Click" Width="42">Stay</Button>
                 <Slider x:Name="sldr_BetAmount"
                         Orientation="Vertical"
                         Grid.RowSpan="2"
@@ -124,7 +124,7 @@
                         Grid.Row="1"
                         Grid.Column="0"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom" Margin="35,0,35,47" Click="btn_Bet_Click">Bet</Button>
+                        VerticalAlignment="Bottom" Margin="35,0,20,47" Click="btn_Bet_Click" Width="38">Bet</Button>
                 <Label Grid.Row="2"
                        Grid.Column="0"
                        HorizontalAlignment="Center"
