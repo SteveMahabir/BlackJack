@@ -69,7 +69,7 @@ namespace BlackJack
                 btn_StarRound.IsEnabled = true;
                 btn_Bet.IsEnabled = false;
                 sldr_BetAmount.IsEnabled = false;
-                game.Bet(myCallbackId, Convert.ToInt32(lbl_PlayerScore.Content));
+                game.Bet(myCallbackId, Convert.ToInt32(lbl_BetAmount.Content));
             }
         }
 
